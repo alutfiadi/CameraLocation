@@ -29,6 +29,14 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                var oRootPath = jQuery.sap.getModulePath("camera"); // your resource root
+		
+                var oPathModel = new sap.ui.model.json.JSONModel({
+                    path : oRootPath,
+                });
+                        
+                this.setModel(oPathModel, "pathModel");
             }
         });
     }
